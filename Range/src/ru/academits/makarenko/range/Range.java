@@ -9,21 +9,20 @@ public class Range {
         this.to = to;
     }
 
-    public static double calcInterval(double from, double to) {
+    public double calcLong(double from, double to) {
         return to - from;
     }
 
     public void print() {
-        double interval = calcInterval(from, to);
-        System.out.println(interval);
+        double aLong = calcLong(from, to);
+        System.out.println(aLong);
     }
 
     public boolean isInside(double x, double from, double to) {
-        double epsilon = 0.00000001;
 
-        if (x - from > epsilon && to - x > epsilon){
+        if (from <= x && x <= to) {
             return true;
         }
-            return false;
-        }
+        return false;
     }
+}
