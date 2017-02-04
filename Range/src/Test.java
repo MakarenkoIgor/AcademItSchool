@@ -6,9 +6,10 @@ import ru.academits.makarenko.range.Range;
 public class Test {
     public static void main(String[] args) {
         Range range = new Range(1.2, 3.7);
-        range.print();
+        double result = range.calcLength();
+        System.out.println(result);
         double x = 1.5;
-        boolean z = range.isInside(x, 1.2, 3.7);
+        boolean z = range.isInside(x);
         System.out.println(z);
 
     }

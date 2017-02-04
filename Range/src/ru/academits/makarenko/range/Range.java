@@ -4,20 +4,25 @@ public class Range {
     private double from;
     private double to;
 
+    public double getFrom() {
+        return from;
+    }
+
+    public double getTo() {
+        return to;
+    }
+
     public Range(double from, double to) {
         this.from = from;
         this.to = to;
     }
 
-    public void calcLength() {
-        System.out.println(to - from);
+    public double calcLength() {
+        return (to - from);
     }
 
     public boolean isInside(double x) {
+        return (from <= x && x <= to);
 
-        if (from <= x && x <= to) {
-            return true;
-        }
-        return false;
     }
 }
