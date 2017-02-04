@@ -9,16 +9,11 @@ public class Range {
         this.to = to;
     }
 
-    public double calcLong(double from, double to) {
-        return to - from;
+    public void calcLength() {
+        System.out.println(to - from);
     }
 
-    public void print() {
-        double aLong = calcLong(from, to);
-        System.out.println(aLong);
-    }
-
-    public boolean isInside(double x, double from, double to) {
+    public boolean isInside(double x) {
 
         if (from <= x && x <= to) {
             return true;
