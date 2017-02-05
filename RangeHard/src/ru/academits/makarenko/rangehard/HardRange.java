@@ -28,5 +28,29 @@ public class HardRange {
         return (from <= x && x <= to);
     }
 
+    public HardRange calcIntersection(HardRange hardRange) {
+        if (this.from > hardRange.to || hardRange.from > this.to) {
+            return null;
+        }
+        if (this.from < hardRange.from) {
+            this.from = hardRange.from;
+        }
+        if (this.to > hardRange.to) {
+            this.to = hardRange.to;
+        }
+        return new HardRange(this.from, this.to);
+    }
 
+    public HardRange[] calcMerger(HardRange hardRange) {
+        if (this.from > hardRange.to || this.to < hardRange.from) {
+            return (new HardRange[]{new HardRange(this.from, this.to), new HardRange(hardRange.from, hardRange.to)});
+        }
+        if(this.from > hardRange.from){
+            this.from = hardRange.from;
+        }
+        if(this.to < hardRange.to){
+            this.to = hardRange.to;
+        }
+        return (new HardRange[]{new HardRange(this.from, this.to)});
+    }
 }
