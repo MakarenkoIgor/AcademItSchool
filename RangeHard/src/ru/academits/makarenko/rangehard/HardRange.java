@@ -1,10 +1,13 @@
-package ru.academits.makarenko.range;
+package ru.academits.makarenko.rangehard;
 
-public class Range {
+/**
+ * Created by 1 on 04.02.2017.
+ */
+public class HardRange {
     private double from;
     private double to;
 
-    public Range(double from, double to) {
+    public HardRange(double from, double to) {
         this.from = from;
         this.to = to;
     }
@@ -23,6 +26,7 @@ public class Range {
 
     public boolean isInside(double x) {
         return (from <= x && x <= to);
-
     }
+
+
 }
