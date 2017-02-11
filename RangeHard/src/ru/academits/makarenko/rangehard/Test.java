@@ -15,6 +15,7 @@ public class Test {
             System.out.printf("%f, %f", hardRange.calcIntersection(hardRange1).getFrom(), hardRange.calcIntersection(hardRange1).getTo());
 
         }
+
     }
 }
 

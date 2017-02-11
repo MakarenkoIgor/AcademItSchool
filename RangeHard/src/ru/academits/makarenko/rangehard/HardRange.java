@@ -45,10 +45,27 @@ public class HardRange {
         if (this.from > hardRange.to || this.to < hardRange.from) {
             return (new HardRange[]{new HardRange(this.from, this.to), new HardRange(hardRange.from, hardRange.to)});
         }
-        if(this.from > hardRange.from){
+        if (this.from > hardRange.from) {
             this.from = hardRange.from;
         }
-        if(this.to < hardRange.to){
+        if (this.to < hardRange.to) {
+            this.to = hardRange.to;
+        }
+        return (new HardRange[]{new HardRange(this.from, this.to)});
+    }
+
+    public HardRange[] calcCrossing(HardRange hardRange) {
+        if (this.from > hardRange.to || hardRange.from > this.to) {
+            return (new HardRange[]{new HardRange(this.from, this.to), new HardRange(hardRange.from, hardRange.to)});
+        }
+        if (this.from < hardRange.from) {
+
+        } else {
+            this.from = hardRange.from;
+        }
+        if (this.to > hardRange.to) {
+
+        } else {
             this.to = hardRange.to;
         }
         return (new HardRange[]{new HardRange(this.from, this.to)});
