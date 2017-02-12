@@ -70,4 +70,27 @@ public class HardRange {
         }
         return (new HardRange[]{new HardRange(this.from, this.to)});
     }
+
+    public boolean isCrossing(HardRange hardRange) {
+        if (this.to < hardRange.from || hardRange.to > this.from) {
+            return false;
+        }
+        return true;
+    }
+
+    public HardRange[] calcDifference(HardRange hardRange) {
+        if (isCrossing(hardRange)) {
+            if (this.from < hardRange.from && this.to <= hardRange.to) {
+                return (new HardRange[]{new HardRange(this.from, hardRange.to)});
+            } else if (this.from > hardRange.from && this.to > hardRange.to) {
+                return (new HardRange[]{new HardRange(hardRange.from, this.from)});
+            }
+
+        } else {
+            return (new HardRange[]{new HardRange(this.from, this.to)});
+        }
+        return null;
+    }
+
+
 }
