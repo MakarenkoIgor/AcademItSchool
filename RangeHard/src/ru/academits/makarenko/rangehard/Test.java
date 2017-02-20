@@ -14,9 +14,12 @@ public class Test {
         } else {
             System.out.printf("%f, %f", hardRange.calcIntersection(hardRange1).getFrom(), hardRange.calcIntersection(hardRange1).getTo());
         }
-        for(int i = 0; i <= hardRange.calcDifference(hardRange1).length; ++i){
-
+        HardRange[] array = hardRange.calcDifference(hardRange1);
+        for(int i = 0; i < array.length; ++i){
+            System.out.println(array[i]);
         }
+        System.out.printf("%f, %f", hardRange.calcCrossing(hardRange1).getFrom, hardRange.calcIntersection(hardRange1).getTo());
+
     }
 }
 

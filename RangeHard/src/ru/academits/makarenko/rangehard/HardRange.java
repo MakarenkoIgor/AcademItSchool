@@ -92,5 +92,7 @@ public class HardRange {
         return null;
     }
 
-
+    public String toString() {
+        return from + ", " + to;
+    }
 }
